@@ -13,6 +13,7 @@ import Cookies from 'js-cookie';
 import { ToastContainer, toast } from 'react-toastify';
 
 // The following will add student to DB, POST requests and will return a nice hi-fi model
+// This also Add a button on the home page for add a new student with name, email.  Set the status code to 0.  Add a new route in App.js  
 class AddStudent extends Component {
 		constructor(props) {
 		super(props);
@@ -31,7 +32,7 @@ class AddStudent extends Component {
 			'studentEmail': this.state.email,
 			'statusCode': this.state.status_code
 			};
-		
+		//fetch to add student; it includes a catch if an error occurs 
 		fetch(`${SERVER_URL}/addStudent`,
 	      { 
           //mode: 'no-cors',
@@ -88,18 +89,18 @@ class AddStudent extends Component {
               <Grid item xs={6}><InputLabel id="status_code_select_label" style={{color: 'green'}}>Status Code</InputLabel></Grid>
               <Grid item xs={6}>
               <Select
-  labelId='status_code_select_label'
-  id='status_code_select'
-  label="Status Code"
-  name="status_code"
-  onChange={this.handleChange}
-  defaultValue={0}
-  style={{color: 'blue', border: '2px solid blue', borderRadius: '5px', padding: '5px'}}
+              labelId='status_code_select_label'
+              id='status_code_select'
+              label="Status Code"
+              name="status_code"
+              onChange={this.handleChange}
+              defaultValue={0}
+              style={{color: 'blue', border: '2px solid blue', borderRadius: '5px', padding: '5px'}}
  >
-  <MenuItem value={0}>Not Started(code:0)</MenuItem>
-  <MenuItem value={1}>In Progress(code:1)</MenuItem>
-  <MenuItem value={2}>Completed(code:2)</MenuItem>
- </Select>
+              <MenuItem value={0}>Not Started(code:0)</MenuItem>
+              <MenuItem value={1}>In Progress(code:1)</MenuItem>
+              <MenuItem value={2}>Completed(code:2)</MenuItem>
+            </Select>
               </Grid>
               <Grid item xs={6}>
                 <Button 

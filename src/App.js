@@ -7,6 +7,7 @@ import Semester from './components/Semester';
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
 import AddStudent from './components/AddStudent';
 
+//This is the app function class: here a route to add student is implemented.
 function App() {
   return (
     <div className="App">
