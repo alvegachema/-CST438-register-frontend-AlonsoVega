@@ -5,7 +5,9 @@ import Typography from '@mui/material/Typography';
 import SchedList from './components/SchedList';
 import Semester from './components/Semester';
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
+import AddStudent from './components/AddStudent';
 
+//This is the app function class: here a route to add student is implemented.
 function App() {
   return (
     <div className="App">
@@ -20,6 +22,7 @@ function App() {
        <Switch>
         <Route exact path='/' component={Semester} />
         <Route path='/schedule' component={SchedList} />
+		    <Route path='/addStudent' component={AddStudent} />
        </Switch>
       </BrowserRouter>
     </div>
